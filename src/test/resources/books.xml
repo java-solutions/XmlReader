@@ -1,0 +1,56 @@
+<books>
+    <book id="1" description="test object">
+        <authors>
+            <author>
+                <name>Author 1</name>
+                <surname>Surname 1</surname>
+            </author>
+            <Author>
+                <name>Author 2</name>
+                <surname>Surname 2</surname>
+            </Author>
+        </authors>
+        <isbn>978-3-16-148410-0</isbn>
+        <tiTLe lang="pl">przykladowy tytul 1</tiTLe>
+        <title lang="en">english title 1</title>
+        <releaseDate>2019-01-01</releaseDate>
+        <ignore>ignore value</ignore>
+        <somevalue ignore="ignore attribute">test 1</somevalue>
+        <somevalue>test 2</somevalue>
+        <publishers>
+            <publisher>
+                <name>Publisher 1</name>
+                <yearOfPublish>1980</yearOfPublish>
+            </publisher>
+            <publisher>
+                <name>Publisher 2</name>
+                <yearOfPublish>1982</yearOfPublish>
+            </publisher>
+        </publishers>
+    </book>
+    <book id="2" description="template">
+        <authors>
+            <author>
+                <name>Author 2.1</name>
+                <surname>Surname 2.1</surname>
+            </author>
+            <author>
+                <name>Author 2.2</name>
+                <surname>Surname 2.2</surname>
+            </author>
+        </authors>
+        <isbn>978-3-16-148410-2</isbn>
+        <title lang="pl">przykladowy tytul 2</title>
+        <title lang="en">english title 2</title>
+        <releaseDate>2019-01-02</releaseDate>
+        <publisher>
+            <name>Publisher 2.1</name>
+            <yearOfPublish>1984</yearOfPublish>
+        </publisher>
+        <publisher>
+            <name>Publisher 2.2</name>
+            <yearOfPublish>1985</yearOfPublish>
+        </publisher>
+
+    </book>
+</books>
