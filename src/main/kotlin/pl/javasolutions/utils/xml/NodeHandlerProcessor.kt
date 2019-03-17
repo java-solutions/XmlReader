@@ -10,7 +10,7 @@ import org.xml.sax.Attributes
  * @see Node
  * @see XmlReader
  */
-class NodeWriterHandler(
+class NodeHandlerProcessor(
     /**
      * name of handler base on qname
      */
@@ -27,13 +27,10 @@ class NodeWriterHandler(
     attributes: Attributes?
 ) {
 
-    private val node = Node()
-
-    /**
-     * last register element from xml
-     * default element is value, for a case when register handler is for object with attributes only
-     */
-    private var activeElement: String =  "value"
+    companion object {
+        @JvmStatic
+        private val DEFAULT_ACTIVE_ELEMENT = "value"
+    }
 
     /**
      * convert xml attributes to map of strings in node
@@ -50,6 +47,14 @@ class NodeWriterHandler(
         }
 
     }
+
+    private val node = Node()
+
+    /**
+     * last register element from xml
+     * default element is value, for a case when register handler is for object with attributes only
+     */
+    private var activeElement: String = DEFAULT_ACTIVE_ELEMENT
 
     /**
      * start element event to save last element
@@ -71,7 +76,8 @@ class NodeWriterHandler(
      * end element event clears active element and run process on handler
      */
     fun endElement(): Any? {
-        activeElement = ""
+        activeElement = DEFAULT_ACTIVE_ELEMENT
         return handler.process(node)
     }
+
 }

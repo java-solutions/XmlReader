@@ -26,7 +26,7 @@ class XmlReader : DefaultHandler() {
     /**
      * LIFO Que
      */
-    private val activeHandlers: Deque<NodeWriterHandler> = LinkedList<NodeWriterHandler>()
+    private val activeHandlers: Deque<NodeHandlerProcessor> = LinkedList<NodeHandlerProcessor>()
 
     /**
      * Object representation of red xml
@@ -60,7 +60,7 @@ class XmlReader : DefaultHandler() {
 
                 // add to active handler new node writer when qname has handler
                 handlers[this]?.let {
-                    activeHandlers.addLast(NodeWriterHandler(this, it, attributes))
+                    activeHandlers.addLast(NodeHandlerProcessor(this, it, attributes))
                 }
             }
     }
